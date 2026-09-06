@@ -10,8 +10,28 @@ let chores = [];
 // Starter JS for Chore Tracker
 document.addEventListener('DOMContentLoaded', function () {
   console.log('Chore Tracker ready');
+  
+  fetch(`${API_BASE_URL}/health`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      alert(data);
+    })
+    .catch(error => {
+      console.error('Request failed:', error);
+      alert('Unable to load chores. Update the backend URL in assets/js/api-config.js or start the backend server.');
+    });
 
-  fetch(`${API_BASE_URL}/chores`, {
+  fetch(`${API_BASE_URL}/api/chores`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -87,7 +107,7 @@ function pickChore (time) {
   const chosen = candidates[Math.floor(Math.random() * candidates.length)];
   alert(`Picked chore: ${chosen.name} - ${chosen.notes || 'No notes'} (duration: ${chosen.duration})`);
 
-  fetch(`${API_BASE_URL}/chores/${encodeURIComponent(chosen._id)}/complete`, {
+  fetch(`${API_BASE_URL}/api/chores/${encodeURIComponent(chosen._id)}/complete`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
