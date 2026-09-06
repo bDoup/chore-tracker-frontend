@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chore Tracker</title>
+    <!-- User will add theme (e.g., Bootstrap) later -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">Chore Tracker</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Welcome to Chore Tracker</h1>
+        <p>A simple static app skeleton ready for GitHub Pages.</p>
+        <p>Customize the CSS (Bootstrap or another theme) later.</p>
+        <a class="btn btn-primary" href="#">Get started</a>
+      </section>
+      <section class="picker">
+        <label for="durationPicker">Choose time:</label>
+        <select id="durationPicker">
+          <option value="">Loading...</option>
+        </select>
+        <button id="pickChoreBtn" class="btn">Pick Chore</button>
+      </section>
+    </main>
+
+    <script src="assets/js/api-config.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+/* Starter styles for Chore Tracker - user will replace or add Bootstrap */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.hero {
+  padding: 4rem 1rem;
+  text-align: center;
+}
